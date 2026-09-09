@@ -1,0 +1,12 @@
+.{
+    .name = .abseil,
+    .version = "20250512.2.0",
+    .fingerprint = 0x5635a2554013e745,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .abseil_src = .{
+            .path = "../abseil-src",
+        },
+    },
+    .paths = .{ "build.zig", "build.zig.zon" },
+}
