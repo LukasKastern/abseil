@@ -5,7 +5,8 @@
     .minimum_zig_version = "0.16.0",
     .dependencies = .{
         .abseil_src = .{
-            .path = "../abseil-src",
+            .url = "git+https://github.com/abseil/abseil-cpp#38bb0b9e7899b15ec710560e0ac5fd9713f053c8",
+            .hash = "N-V-__8AANJanwBfwDj0mxtxbRZJZorAaZUQ5J-_bknzatz2",
         },
     },
     .paths = .{ "build.zig", "build.zig.zon" },
