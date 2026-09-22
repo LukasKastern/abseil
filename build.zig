@@ -6,9 +6,6 @@ pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    // Grab the sources.json which tells us what to build
-    // const io = b.graph.io;
-
     const abseil_cpp = b.addLibrary(.{
         .name = "abseil",
         .root_module = b.createModule(.{
@@ -35,7 +32,8 @@ pub fn build(b: *std.Build) !void {
     abseil_cpp.root_module.addIncludePath(src.path(""));
 
     // Declare include path
-    b.addNamedLazyPath("include", src.path(""));
+    abseil_cpp.installHeadersDirectory(src.path(""), "", .{ .include_extensions = &.{ ".h", ".inc" } });
+
     b.installArtifact(abseil_cpp);
 }
 
